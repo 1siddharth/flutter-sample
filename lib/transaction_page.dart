@@ -13,9 +13,9 @@ class TransectionPage extends StatefulWidget {
 class _TransectionPageState extends State<TransectionPage> {
   @override
   void dispose() {
-    Hive.close();
+    //Hive.close();
 
-    super.dispose();
+    //super.dispose();
   }
 
   @override
@@ -37,8 +37,8 @@ class _TransectionPageState extends State<TransectionPage> {
           onPressed: () => showDialog(
             context: context,
             builder: (context) => TransactionDialog(
-              onClickedDone: addTransection,
-            ),
+                //onClickedDone: addTransection,
+                ),
           ),
         ),
       );

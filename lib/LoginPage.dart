@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Forgotpassword.dart';
+import 'HomePage.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -88,10 +89,11 @@ class _loginPageState extends State<loginPage> {
                 )
               ],
             ),
-            Expanded(
-              child: Center(
+            Center(
+              child: InkWell(
+                onTap: onloginclick,
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 130, vertical: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 100, vertical: 20),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(7)),
                       color: Color(0xFFFFEB3B)),
@@ -101,7 +103,7 @@ class _loginPageState extends State<loginPage> {
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -111,5 +113,10 @@ class _loginPageState extends State<loginPage> {
   void openForgotPassword() {
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => ForgotPassword()));
+  }
+
+  void onloginclick() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => TransectionPage()));
   }
 }

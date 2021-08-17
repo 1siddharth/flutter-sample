@@ -20,7 +20,7 @@ class _TransectionPageState extends State<TransectionPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text('Hive Expense Tracker'),
+          title: Text('Movie tracker'),
           centerTitle: true,
         ),
         body: ValueListenableBuilder<Box<Transection>>(
@@ -81,26 +81,26 @@ class _TransectionPageState extends State<TransectionPage> {
 
   Widget buildTransection(
     BuildContext context,
-    Transection Transection,
+    Transection transection,
   ) {
     return Card(
       color: Colors.white,
       child: ExpansionTile(
         tilePadding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
         title: Text(
-          Transection.movie,
+          transection.movie,
           maxLines: 2,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
         trailing: Text(
-          "amount",
+          transection.director,
           style: TextStyle(
               color: Color.fromRGBO(45, 56, 58, 0.3),
               fontWeight: FontWeight.bold,
               fontSize: 16),
         ),
         children: [
-          buildButtons(context, Transection),
+          buildButtons(context, transection),
         ],
       ),
     );
